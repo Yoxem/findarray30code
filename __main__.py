@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #-*-coding:utf-8-*-
 import sqlite3
+import tkinter as tk
 
 def table2list(table_tsv):
     with open(table_tsv,'r',encoding='utf-16') as tsv:
@@ -45,25 +46,36 @@ def import_all_table():
             list2sqlite(list,c)
 
     db.commit()
+    return db, c
 
 def find_code(char,c):
 
-    raw_code = c.execute('''SELECT code FROM ime WHERE char = ?''', (c,)) 
+    raw_query = c.execute('''SELECT code FROM ime WHERE char = ?''', (char,))
+    raw_code = [i[0] for i in raw_query.fetchall()]
     code = [rawcode2truecode(i) for i in raw_code]
+    code = sorted(code,reverse=True)
+    print(code)
     return code, c
 
+
 def rawcode2truecode(raw):
+    #1^ = Q, 1- = A, 1v = Z, 2^ = W, 2- = S ......, 0^ = P, 0- = :, 0v = ?
     raw_code_order = "QAZWSXEDCRFVTGBYHNUJMIK<OL>P:?"
     true_code = ""
 
     for i in raw:
         i_index = raw_code_order.index(i)
-        column = str(i_index // 3)
-        raw_number = index % 3
-        raw = ['^','-','v'][raw_number]
+        uncorrected_column = i_index // 3
+        #correct the column no. 2 -> 3; 9 -> 0
+        column = str(uncorrected_column + 1)[-1]
+        raw_number = i_index % 3
+        raw = ['^','-','v'][raw_number] # 0=^;1=-;2=v
         column_and_raw = column + raw
         true_code = true_code + column_and_raw
 
     return true_code
 
-import_all_table()
+
+db,c = import_all_table()
+
+find_code("越",c)
