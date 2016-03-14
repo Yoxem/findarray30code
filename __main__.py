@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #-*-coding:utf-8-*-
 import sqlite3
-import tkinter as tk
+import sys
+from PyQt4 import QtGui, uic
 
 def table2list(table_tsv):
     with open(table_tsv,'r',encoding='utf-16') as tsv:
@@ -74,7 +75,6 @@ def rawcode2truecode(raw):
         true_code = true_code + column_and_raw
 
     return true_code
-
 
 db,c = import_all_table()
 
