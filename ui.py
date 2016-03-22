@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui.ui'
 #
-# Created: Tue Mar 15 02:00:27 2016
+# Created: Wed Mar 23 07:34:11 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,49 +23,66 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(392, 321)
-        self.verticalLayout_2 = QtGui.QVBoxLayout(Dialog)
-        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.verticalLayout = QtGui.QVBoxLayout()
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.scrollArea = QtGui.QScrollArea(Dialog)
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
-        self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -14, 357, 706))
-        self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
-        self.horizontalLayout = QtGui.QHBoxLayout(self.scrollAreaWidgetContents)
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.label = QtGui.QLabel(self.scrollAreaWidgetContents)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
-        self.label.setTextFormat(QtCore.Qt.AutoText)
-        self.label.setWordWrap(True)
-        self.label.setOpenExternalLinks(True)
-        self.label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByKeyboard|QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextBrowserInteraction|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName(_fromUtf8("MainWindow"))
+        MainWindow.resize(478, 408)
+        self.centralwidget = QtGui.QWidget(MainWindow)
+        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
+        self.textEdit = QtGui.QTextEdit(self.centralwidget)
+        self.textEdit.setGeometry(QtCore.QRect(90, 20, 301, 21))
+        self.textEdit.setObjectName(_fromUtf8("textEdit"))
+        self.label = QtGui.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 20, 66, 15))
         self.label.setObjectName(_fromUtf8("label"))
-        self.horizontalLayout.addWidget(self.label)
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.verticalLayout.addWidget(self.scrollArea)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
-        self.buttonBox = QtGui.QDialogButtonBox(Dialog)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
-        self.verticalLayout_2.addWidget(self.buttonBox)
+        self.pushButton = QtGui.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(400, 20, 61, 26))
+        self.pushButton.setObjectName(_fromUtf8("pushButton"))
+        self.pushButton_2 = QtGui.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(400, 60, 61, 26))
+        self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
+        self.label_2 = QtGui.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(30, 110, 421, 211))
+        self.label_2.setTextFormat(QtCore.Qt.AutoText)
+        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_2.setMargin(-2)
+        self.label_2.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByKeyboard|QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextBrowserInteraction|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
+        self.label_2.setObjectName(_fromUtf8("label_2"))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtGui.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 478, 21))
+        self.menubar.setObjectName(_fromUtf8("menubar"))
+        self.menu_Help = QtGui.QMenu(self.menubar)
+        self.menu_Help.setObjectName(_fromUtf8("menu_Help"))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtGui.QStatusBar(MainWindow)
+        self.statusbar.setObjectName(_fromUtf8("statusbar"))
+        MainWindow.setStatusBar(self.statusbar)
+        self.action_About = QtGui.QAction(MainWindow)
+        self.action_About.setObjectName(_fromUtf8("action_About"))
+        self.menu_Help.addAction(self.action_About)
+        self.menubar.addAction(self.menu_Help.menuAction())
 
-        self.retranslateUi(Dialog)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), Dialog.accept)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), Dialog.reject)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
-        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">findarray30code</span></p><p align=\"center\">0.0.1</p><p align=\"center\">查詢行列 30 輸入法碼表的工具。</p><p align=\"center\">支援 CJK Ext. A - E 的罕字。</p><p align=\"center\"><a href=\"https://github.com/Yoxem/findarray30code \"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/Yoxem/findarray30code</span></a></p><p align=\"center\">Copyright (C) 2016</p><p align=\"center\">Yoxem Chen (aka Kian-ting Tan)</p><p align=\"center\">under X11 License</p><p><span style=\" font-size:9pt;\">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></p><p><span style=\" font-size:9pt;\">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></p><p><span style=\" font-size:9pt;\">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></p></body></html>", None))
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(_translate("MainWindow", "findarray30code - 行列30查碼", None))
+        self.label.setText(_translate("MainWindow", "輸入文字", None))
+        self.pushButton.setText(_translate("MainWindow", "查詢", None))
+        self.pushButton_2.setText(_translate("MainWindow", "清空", None))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>您查詢的行列碼為：\n"
+"<table style=\"vertical-align:top;\">\n"
+"<tr>\n"
+"<td><span style=\" font-size:18pt;\">越</span></td>\n"
+"<td >4^3v1^2v<br/>4^1^</td>\n"
+"</tr>\n"
+"<tr>\n"
+"<td><span style=\" font-size:18pt;\">的</span></td>\n"
+"<td >9-0^9-6-<br/>5^</td>\n"
+"</tr>\n"
+"</table>\n"
+"</html>", None))
+        self.menu_Help.setTitle(_translate("MainWindow", "&Help", None))
+        self.action_About.setText(_translate("MainWindow", "&About...", None))
 
