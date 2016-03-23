@@ -77,11 +77,16 @@ def rawcode2truecode(raw):
 
     return true_code
 
-class MainWindow(QtGui.QMainWindow, ui.Ui_Dialog):
+class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
-
+        self.lineEdit.returnPressed.connect(self.input_characters)
+        self.pushButton.clicked.connect(self.input_characters)
+    def input_characters(self):
+        print("Hello world")
+        #TODO: validate, and return result
+        
 def main():
     app = QtGui.QApplication(sys.argv)
     form = MainWindow()
