@@ -84,7 +84,13 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.lineEdit.returnPressed.connect(self.input_characters)
         self.pushButton.clicked.connect(self.input_characters)
     def input_characters(self):
-        print("Hello world")
+        characters = self.lineEdit.text()
+        chinese_char_pattern = QtCore.QRegExp("[\x{4e00}-\x{9fa5}]+")
+        validator = QtGui.QRegExpValidator( chinese_char_pattern, characters)
+        if validator.validare():
+        		print (characters)
+        	else:
+        		print("error")
         #TODO: validate, and return result
         
 def main():
