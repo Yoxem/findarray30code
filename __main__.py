@@ -3,7 +3,7 @@
 import sqlite3
 import sys
 import ui, ui2
-from PyQt4 import QtGui 
+from PyQt4 import QtGui, QtCore
 
 def table2list(table_tsv):
     with open(table_tsv,'r',encoding='utf-16') as tsv:
@@ -85,12 +85,12 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.pushButton.clicked.connect(self.input_characters)
     def input_characters(self):
         characters = self.lineEdit.text()
-        chinese_char_pattern = QtCore.QRegExp("[\x{4e00}-\x{9fa5}]+")
+        chinese_char_pattern = QtCore.QRegExp("[\u4e00-\u9fa5]+")
         validator = QtGui.QRegExpValidator( chinese_char_pattern, characters)
-        if validator.validare():
-        		print (characters)
-        	else:
-        		print("error")
+        if validator.validate():
+            print (characters)
+        else:
+            print("error")
         #TODO: validate, and return result
         
 def main():
