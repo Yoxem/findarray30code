@@ -5,6 +5,7 @@ import sys
 import ui, ui2
 from PyQt4 import QtGui, QtCore
 
+
 def table2list(table_tsv):
     with open(table_tsv,'r',encoding='utf-16') as tsv:
         code_list = []
@@ -54,20 +55,13 @@ def find_code(char,c):
 
     raw_query = c.execute('''SELECT code FROM ime WHERE char = ?''', (char,))
     raw_code = [i[0] for i in raw_query.fetchall()]
-    code = [rawcode2truecode(i) for i in raw_code]
-    code = sorted(code[0],key=lambda x: code_index(x))
-    print(code)
-    return code, c
-
-def code_index(x):
-    index = (10 -len(x[0]))/2;print(x[1])
-    index = index + (x[1]/30**6)
-    print(code_index(x))
-    return index
+    code_with_index = [rawcode2truecode(i) for i in raw_code]
+    code = [i[0] for i in sorted(code_with_index,key= lambda x : x[1])]
+    return code
 
 def rawcode2truecode(raw):
     #1^ = Q, 1- = A, 1v = Z, 2^ = W, 2- = S ......, 0^ = P, 0- = :, 0v = ?
-    raw_code_order = "QAZWSXEDCRFVTGBYHNUJMIK,OL.P;?"
+    raw_code_order = "QAZWSXEDCRFVTGBYHNUJMIK,OL.P;/"
     true_code = ""
     index = 0
     for i in raw:
@@ -76,35 +70,35 @@ def rawcode2truecode(raw):
         uncorrected_column = i_index // 3
         #correct the column no. 2 -> 3; 9 -> 0
         column = str(uncorrected_column + 1)[-1]
-        raw_number = i_index % 3
-        raw = ['^','-','v'][raw_number] # 0=^;1=-;2=v
-        column_and_raw = column + raw
-        true_code = true_code + column_and_raw
+        row_number = i_index % 3
+        row = ['^','-','v'][row_number] # 0=^;1=-;2=v
+        column_and_row = column + row
+        true_code = true_code + column_and_row
         index = index * 30 + i_index
-
-    return true_code,i_index
+    index = (5-len(raw))*(30**5) + index
+    return true_code,index
 
 class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
     def __init__(self, parent=None):
+        self.db,self.c = import_all_table()
+
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
         self.lineEdit.returnPressed.connect(self.input_characters)
         self.pushButton.clicked.connect(self.input_characters)
+
     def input_characters(self):
         import re
-        
-        db,c = import_all_table()
         
         characters = self.lineEdit.text()
         chinese_char_pattern = re.compile("^[\u4e00-\u9fa5]+$")
         is_chinese_chars = chinese_char_pattern.match(characters)
 
         if is_chinese_chars:
-           for char in characters:
-           	find_code(char,c)
+           char_code_list = [(ch,find_code(ch,self.c)) for ch in characters]
+           print(char_code_list)
         else:
             print("error")
-        #TODO: validate, and return result
         
 def main():
     app = QtGui.QApplication(sys.argv)
@@ -112,8 +106,10 @@ def main():
     form.show()
     app.exec_()
 
+    
+
 if __name__ == '__main__':
     main()
-   
+    
 
 
