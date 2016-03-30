@@ -55,18 +55,24 @@ def find_code(char,c):
     raw_query = c.execute('''SELECT code FROM ime WHERE char = ?''', (char,))
     raw_code = [i[0] for i in raw_query.fetchall()]
     code = [rawcode2truecode(i) for i in raw_code]
-    code = sorted(code,reverse=True)
+    code = sorted(code[0],key=lambda x: code_index(x))
     print(code)
     return code, c
 
+def code_index(x):
+    index = (10 -len(x[0]))/2;print(x[1])
+    index = index + (x[1]/30**6)
+    print(code_index(x))
+    return index
 
 def rawcode2truecode(raw):
     #1^ = Q, 1- = A, 1v = Z, 2^ = W, 2- = S ......, 0^ = P, 0- = :, 0v = ?
-    raw_code_order = "QAZWSXEDCRFVTGBYHNUJMIK<OL>P:?"
+    raw_code_order = "QAZWSXEDCRFVTGBYHNUJMIK,OL.P;?"
     true_code = ""
-
+    index = 0
     for i in raw:
         i_index = raw_code_order.index(i)
+        
         uncorrected_column = i_index // 3
         #correct the column no. 2 -> 3; 9 -> 0
         column = str(uncorrected_column + 1)[-1]
@@ -74,8 +80,9 @@ def rawcode2truecode(raw):
         raw = ['^','-','v'][raw_number] # 0=^;1=-;2=v
         column_and_raw = column + raw
         true_code = true_code + column_and_raw
+        index = index * 30 + i_index
 
-    return true_code
+    return true_code,i_index
 
 class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
     def __init__(self, parent=None):
@@ -84,11 +91,17 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.lineEdit.returnPressed.connect(self.input_characters)
         self.pushButton.clicked.connect(self.input_characters)
     def input_characters(self):
+        import re
+        
+        db,c = import_all_table()
+        
         characters = self.lineEdit.text()
-        chinese_char_pattern = QtCore.QRegExp("[\u4e00-\u9fa5]+")
-        validator = QtGui.QRegExpValidator( chinese_char_pattern, characters)
-        if validator.validate():
-            print (characters)
+        chinese_char_pattern = re.compile("^[\u4e00-\u9fa5]+$")
+        is_chinese_chars = chinese_char_pattern.match(characters)
+
+        if is_chinese_chars:
+           for char in characters:
+           	find_code(char,c)
         else:
             print("error")
         #TODO: validate, and return result
@@ -101,7 +114,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+   
 
-db,c = import_all_table()
 
-find_code("越",c)
