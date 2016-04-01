@@ -87,16 +87,35 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.lineEdit.returnPressed.connect(self.input_characters)
         self.pushButton.clicked.connect(self.input_characters)
 
+    def show_result(self,char_code):
+        result = ""
+        header = '<table style=\"vertical-align:top;\">'
+        result = header + result
+
+        for (char,code) in char_code:
+            result = result + '<tr><td style="font-size:x-large;' + \
+                'vertical-align:top;">' + \
+                char + '</td><td>'
+                
+            for i in range(len(code)):
+                if (i < len(code) - 1):
+                    result = result + code[i] + '<br/>'
+                else:
+                    result = result + code[i] + '</td></tr>'
+        
+        result = result + '</table>'
+        self.label_2.setText(result)
+        
     def input_characters(self):
         import re
         
         characters = self.lineEdit.text()
-        chinese_char_pattern = re.compile("^[\u4e00-\u9fa5]+$")
+        chinese_char_pattern = re.compile("^[\u2f00-\u2fd5\u4e00-\u9fcc\u3400-\u4db5\u20000-\u2a6d6\u2a700-\u2b734\u2b740-\u2b81d\u2b820-\u2cea1]+$")
         is_chinese_chars = chinese_char_pattern.match(characters)
 
         if is_chinese_chars:
            char_code_list = [(ch,find_code(ch,self.c)) for ch in characters]
-           print(char_code_list)
+           self.show_result(char_code_list)
         else:
             print("error")
         
