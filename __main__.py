@@ -121,12 +121,7 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
     def input_characters(self):
         import re
         characters = self.lineEdit.text()
-        
-        #some CJK ext B,C,etc arerepensented in utf16 in pyqt qlineedit.
-        #convert it to utf8
-        #characters = characters.encode(encoding='utf-16',errors='surrogatepass').decode('utf-8')
-        #print('\\u'+"\\u".join("{:x}".format(ord(c)) for c in characters))
-        chinese_char_pattern = re.compile("^[一-鿌㐀-䶵𠀷𠂁𠁍]+$",re.UNICODE)
+        chinese_char_pattern = re.compile(u"^([一-鿌㐀-䶵\U00020000-\U0002A6D6])+$",re.UNICODE)
         is_chinese_chars = chinese_char_pattern.match(characters)
 
         if is_chinese_chars:
