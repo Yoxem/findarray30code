@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui.ui'
 #
-# Created: Fri Apr  1 23:13:43 2016
+# Created: Sat Apr  2 15:29:18 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -123,18 +123,7 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "輸入文字", None))
         self.pushButton.setText(_translate("MainWindow", "查詢", None))
         self.pushButton_2.setText(_translate("MainWindow", "清空", None))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>您查詢的行列碼為：\n"
-"<table style=\"vertical-align:top;\">\n"
-"<tr>\n"
-"<td><span style=\" font-size:18pt;\">越</span></td>\n"
-"<td >4^3v1^2v<br/>4^1^</td>\n"
-"</tr>\n"
-"<tr>\n"
-"<td><span style=\" font-size:18pt;\">的</span></td>\n"
-"<td >9-0^9-6-<br/>5^</td>\n"
-"</tr>\n"
-"</table>\n"
-"</html>", None))
-        self.menu_Help.setTitle(_translate("MainWindow", "&Help", None))
-        self.action_About.setText(_translate("MainWindow", "&About...", None))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", None))
+        self.menu_Help.setTitle(_translate("MainWindow", "說明 (&H)", None))
+        self.action_About.setText(_translate("MainWindow", "關於 findarray30code (&A)", None))
 

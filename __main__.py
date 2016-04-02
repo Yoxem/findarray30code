@@ -86,10 +86,22 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.setupUi(self)
         self.lineEdit.returnPressed.connect(self.input_characters)
         self.pushButton.clicked.connect(self.input_characters)
+        self.pushButton_2.clicked.connect(self.clear_input)
+        self.action_About.triggered.connect(self.show_about)
+        
+    def clear_input(self):
+        self.label_2.setText("")
+        self.lineEdit.clear()
+
+    def show_about(self):
+        about_dialog = QtGui.QWidget()
+        about_dialog_ui = ui2.Ui_Dialog()
+        about_dialog_ui.setupUi(about_dialog)
+        about_dialog.show()
 
     def show_result(self,char_code):
         result = ""
-        header = '<table style=\"vertical-align:top;\">'
+        header = "<table style=\"vertical-align:top;\"><tr><td colspan=2>查碼結果：</td></tr>"
         result = header + result
 
         for (char,code) in char_code:
@@ -108,9 +120,13 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         
     def input_characters(self):
         import re
-        
         characters = self.lineEdit.text()
-        chinese_char_pattern = re.compile("^[\u2f00-\u2fd5\u4e00-\u9fcc\u3400-\u4db5\u20000-\u2a6d6\u2a700-\u2b734\u2b740-\u2b81d\u2b820-\u2cea1]+$")
+        
+        #some CJK ext B,C,etc arerepensented in utf16 in pyqt qlineedit.
+        #convert it to utf8
+        #characters = characters.encode(encoding='utf-16',errors='surrogatepass').decode('utf-8')
+        #print('\\u'+"\\u".join("{:x}".format(ord(c)) for c in characters))
+        chinese_char_pattern = re.compile("^[一-鿌㐀-䶵𠀷𠂁𠁍]+$",re.UNICODE)
         is_chinese_chars = chinese_char_pattern.match(characters)
 
         if is_chinese_chars:
@@ -121,8 +137,8 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         
 def main():
     app = QtGui.QApplication(sys.argv)
-    form = MainWindow()
-    form.show()
+    main_window = MainWindow()
+    main_window.show()
     app.exec_()
 
     

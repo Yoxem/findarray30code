@@ -120,18 +120,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您查詢的行列碼為：
-&lt;table style=&quot;vertical-align:top;&quot;&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;越&lt;/span&gt;&lt;/td&gt;
-&lt;td &gt;4^3v1^2v&lt;br/&gt;4^1^&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;的&lt;/span&gt;&lt;/td&gt;
-&lt;td &gt;9-0^9-6-&lt;br/&gt;5^&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/html&gt;</string>
+             <string></string>
             </property>
             <property name="textFormat">
              <enum>Qt::AutoText</enum>
@@ -169,7 +158,7 @@
    </property>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
-     <string>&amp;Help</string>
+     <string>說明 (&amp;H)</string>
     </property>
     <addaction name="action_About"/>
    </widget>
@@ -178,7 +167,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_About">
    <property name="text">
-    <string>&amp;About...</string>
+    <string>關於 findarray30code (&amp;A)</string>
    </property>
   </action>
  </widget>
