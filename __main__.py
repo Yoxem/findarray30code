@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 #-*-coding:utf-8-*-
 import sqlite3
@@ -23,7 +24,7 @@ def connect_db(db_filename):
 
 def create_new_db(db_filename):
     db, c = connect_db(db_filename)
-    c.execute('''CREATE TABLE ime (code text, char text)''')  
+    c.execute('''CREATE TABLE ime (code text, char text)''') 
     return db, c
 
 
@@ -66,7 +67,7 @@ def rawcode2truecode(raw):
     index = 0
     for i in raw:
         i_index = raw_code_order.index(i)
-        
+       
         uncorrected_column = i_index // 3
         #correct the column no. 2 -> 3; 9 -> 0
         column = str(uncorrected_column + 1)[-1]
@@ -88,7 +89,7 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
         self.pushButton.clicked.connect(self.input_characters)
         self.pushButton_2.clicked.connect(self.clear_input)
         self.action_About.triggered.connect(self.show_about)
-        
+       
     def clear_input(self):
         self.label_2.setText("")
         self.lineEdit.clear()
@@ -108,38 +109,40 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
             result = result + '<tr><td style="font-size:x-large;' + \
                 'vertical-align:top;">' + \
                 char + '</td><td>'
-                
+               
             for i in range(len(code)):
                 if (i < len(code) - 1):
                     result = result + code[i] + '<br/>'
                 else:
                     result = result + code[i] + '</td></tr>'
-        
+       
         result = result + '</table>'
         self.label_2.setText(result)
-        
+       
     def input_characters(self):
         import re
         characters = self.lineEdit.text()
-        chinese_char_pattern = re.compile(u"^([一-鿌㐀-䶵\U00020000-\U0002A6D6])+$",re.UNICODE)
+        chinese_char_pattern = re.compile(u"^((?<cjk>[一-鿌㐀-䶵𠀀-𪛖𪜀-𫜴𫝀-𫠝𫠠-𬺡])|[^\CJK\s\t\n]+)+$",re.UNICODE)
         is_chinese_chars = chinese_char_pattern.match(characters)
 
-        if is_chinese_chars:
+        if 1:
            char_code_list = [(ch,find_code(ch,self.c)) for ch in characters]
            self.show_result(char_code_list)
         else:
             print("error")
-        
+       
 def main():
     app = QtGui.QApplication(sys.argv)
     main_window = MainWindow()
     main_window.show()
     app.exec_()
 
-    
+   
 
 if __name__ == '__main__':
     main()
-    
+   
+
+
 
 
