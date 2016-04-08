@@ -11,7 +11,7 @@ setup(
     requires=['PyQt4'],
     packages=['findarray30code',],
     license='X11 License',
-    long_description=open('README').read(),
+    long_description=open('README.md').read(),
     package_data={'findarray30code': ['tables/*' , 'LICENSE'],
               },
     scripts=['bin/findarray30code'],
