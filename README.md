@@ -15,13 +15,13 @@ Dependencies
 Install (Under *nix)
 -----------------------------
 
- # Install the dependencies above
- # download the zip file of all the source code, and extract it.
- # open a terminal and enter the main folder of the source code, then key in:
+ 1. Install the dependencies above
+ 2. download the zip file of all the source code, and extract it.
+ 3. open a terminal and enter the main folder of the source code, then key in:
      
      ./setup.py install
 
- # If the depended packages listed above can be install on windows, it may be executed on Windows (I'm not so sure).
+ 4. If the depended packages listed above can be install on windows, it may be executed on Windows (I'm not so sure).
 
 Remove
 ---------------
