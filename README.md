@@ -5,7 +5,7 @@ It supports CJK characters, incl. Extension A-E.
 
 Dependencies
 ----------------
- * Python >= 3.4 (with ``sqlite3'' module)
+ * Python >= 3.4 (with "sqlite3" module)
  * Python3-PyQt4 >= 4.11
  * sqlite3 module for Python 3.4
  * libQt >= 4.8.5
@@ -26,6 +26,6 @@ Install (Under *nix)
 Remove
 ---------------
 
-It's recommented to remove it with ``pip3''. Please use the command after being sure that you have the authority to access the folder:
+It's recommented to remove it with "pip3". Please use the command after being sure that you have the authority to access the folder:
 
     pip3 uninstall findarray30code
