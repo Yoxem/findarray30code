@@ -1,5 +1,26 @@
+Excluding the input method tables:
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+The input method tables:
+
+Array Input Method Public License
+1. OBJECTS
+Specification, design, and user interaction behavior designed for Array Input Method. All mapping tables and related information for Array Input Method.
+2. GRANTING
+License is granted, free of charge, to everyone if the conditions described in PERMISSION AND RESPONSIBILITY are met.
+3. PERMISSION AND RESPONSIBILITY
+A. Permission:
+1. Grant of copyright license
+Subject to the terms and conditions of this License, every one is granted a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sub-license, and distribute the Work and such Derivative Works
+2. Grant of patent license
+No patent is issued for Array Input Method. And the inventor will never claim patents for Array Input Method.
+B. Responsibility:
+1. While distributing the Array Input Method or derivative works thereof, Licensee may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, Licensee may act only on his own behalf and on his soleresponsibility, not on behalf of the licensor, and only if Licensee agrees to indemnify, defend, and hold the licensor harmless for any liability incurred by, or claims asserted against, the licensor by reason of Licensee's accepting any such warranty or additional liability.
+4. CLAIM FROM LICENSOR
+This license is issued by the original inventor and copyright holder of Array Input Method, who owns the full and original rights to the Array Input Method.
+This license is the formal license for Array Input Method. A licensee does not need to request additional license documentation from the licensor.

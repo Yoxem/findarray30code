@@ -108,10 +108,10 @@ class MainWindow(QtGui.QMainWindow, ui.Ui_MainWindow):
 <span style=\" font-size:18pt; font-weight:600;\">findarray30code</span><p/>'''
         about_dialog_info += str(__version__)
         about_dialog_info += '''
-<p/>查詢行列 30 輸入法碼表的工具。<p/>支援 CJK Ext. A - E 的罕字。<br/><a href=\"https://github.com/Yoxem/findarray30code \"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/Yoxem/findarray30code</span></a><p/>Copyright (C) 2016 Yoxem Chen (aka Kian-ting Tan)<p/>
+<p/>查詢行列 30 輸入法碼表的工具。<p/>支援 CJK Ext. A - E 的罕字。<br/><a href=\"https://github.com/Yoxem/findarray30code \"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/Yoxem/findarray30code</span></a><p/>Copyright (C) 2016 Yoxem Chen (aka Kian-ting Tan) <p/>Input method tables: Liao, Ming-te et. al.<p/>
 under X11 License<p/></div>
 <div align=\"left\">
-<h3>License </h3>
+<h3>License</h3>
 <span style=\" font-size:9pt;\">
 '''
         about_dialog_info +=  license_content + \

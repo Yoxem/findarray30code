@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui2.ui'
 #
-# Created: Sat Apr  9 02:29:08 2016
+# Created: Sat Apr  9 06:38:35 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -35,7 +35,7 @@ class Ui_Dialog(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName(_fromUtf8("scrollArea"))
         self.scrollAreaWidgetContents = QtGui.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -14, 357, 706))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 368, 262))
         self.scrollAreaWidgetContents.setObjectName(_fromUtf8("scrollAreaWidgetContents"))
         self.horizontalLayout = QtGui.QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
@@ -67,5 +67,5 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
-        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">findarray30code</span></p><p align=\"center\">0.0.1</p><p align=\"center\">查詢行列 30 輸入法碼表的工具。</p><p align=\"center\">支援 CJK Ext. A - E 的罕字。</p><p align=\"center\"><a href=\"https://github.com/Yoxem/findarray30code \"><span style=\" text-decoration: underline; color:#0000ff;\">https://github.com/Yoxem/findarray30code</span></a></p><p align=\"center\">Copyright (C) 2016</p><p align=\"center\">Yoxem Chen (aka Kian-ting Tan)</p><p align=\"center\">under X11 License</p><p><span style=\" font-size:9pt;\">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span></p><p><span style=\" font-size:9pt;\">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span></p><p><span style=\" font-size:9pt;\">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></p></body></html>", None))
+        self.label.setText(_translate("Dialog", "<html><head/><body><p><br/></p></body></html>", None))
 
