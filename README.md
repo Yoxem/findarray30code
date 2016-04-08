@@ -1,7 +1,7 @@
 Summary
 ---------------
 Code-searcher for Array30, a chinese input method. under X11 license
-It supports CJK characters, incl. Extension A-E.
+It supports CJK characters, incl. Extension A - E.
 
 Dependencies
 ----------------
