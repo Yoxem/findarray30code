@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+#-*-coding:utf-8-*-
+import findarray30code
+
+findarray30code.main()
