@@ -4,7 +4,7 @@ from distutils.core import setup
 from findarray30code.__version__ import __version__
 
 setup(
-    name='FindArray30Code',
+    name='findarray30code',
     version=__version__,
     author='Yoxem Chen',
     url="https://github.com/Yoxem/findarray30code",
