@@ -64,5 +64,5 @@ install [fpm](https://github.com/jordansissel/fpm) first:
     fpm -s python -t deb --name findarray30code --version 0.0.2 --iteration 1 \
     -d 'python3 >= 3.4' -d 'python3-pyqt4 >= 4.11'   -x '**/*.py'  \
 	--description "Code-searcher for Array30, a chinese input method." \
-	-m 'Yoxem Chen <yoxem.tem98@nctu.edu.tw>' --python-pip /usr/bin/pip3 \
+	-m 'Yoxem Chen <emailaddress@emailaddress>' --python-pip /usr/bin/pip3 \
 	--python-bin /usr/bin/python3 .
