@@ -18,6 +18,9 @@ Dependencies 相依套件
 
 Install (under *nix) 安裝（於 *nix）
 --------------------------------------
+**If you use Debian(-based) Linux Distro (eg. Ubuntu, Linux Mint),
+you can see Section "Deb package Deb 套件" 若您使用 Debian 系 Linux
+發行版（例如 Ubuntu, Linux Mint），可見段落「Deb package Deb 套件」**
 
  1. Install the dependencies above. 安裝相依套件。
  2. Download the zip file of all the source code, and extract it. 下載源碼壓縮檔，解壓縮
@@ -42,4 +45,21 @@ Remove (under *nix) 移除（於 *nix）
 
 It's recommended to remove it with "pip3". Please use the command after being sure that you have the authority to access the destination folder 建議使用 pip3 移除之，在確認您有存取目的資料夾權限後，請使用該指令：
 
-    pip3 uninstall findarray30code
+	pip3 uninstall findarray30code
+
+Deb package Deb 套件
+--------------------
+The .deb file in the repo. can be installed on Debian-based Linux.
+
+本 repo 附上 .deb 套件可供 Debian-based Linux 安裝。
+
+The way to package the .deb file is like the following command:
+
+打包為 .deb 的方法如以下指令：
+
+    cd /path/to/findarray30code ; \
+    fpm -s python -t deb --name findarray30code --version 0.0.2 --iteration 1 \
+    -d 'python3 >= 3.4' -d 'python3-pyqt4 >= 4.11'   -x '**/*.py'  \
+	--description "Code-searcher for Array30, a chinese input method." \
+	-m 'Yoxem Chen <yoxem.tem98@nctu.edu.tw>' --python-pip /usr/bin/pip3 \
+	--python-bin /usr/bin/python3 .

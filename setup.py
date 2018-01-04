@@ -7,6 +7,7 @@ setup(
     name='findarray30code',
     version=__version__,
     author='Yoxem Chen',
+    author_email='yoxem.tem98@nctu.edu.tw',
     url="https://github.com/Yoxem/findarray30code",
     requires=['PyQt4'],
     packages=['findarray30code',],
