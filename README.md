@@ -55,9 +55,10 @@ The .deb file in the repo. can be installed on Debian-based Linux.
 
 本 repo 附上 .deb 套件可供 Debian-based Linux 安裝。
 
-The way to package the .deb file is like the following command:
+The way to package the .deb file is like the following command, and you need to
+install [fpm](https://github.com/jordansissel/fpm) first:
 
-打包為 .deb 的方法如以下指令：
+打包為 .deb 的方法如以下指令。需先安裝 [fpm](https://github.com/jordansissel/fpm)：
 
     cd /path/to/findarray30code ; \
     fpm -s python -t deb --name findarray30code --version 0.0.2 --iteration 1 \
