@@ -19,8 +19,10 @@ Dependencies 相依套件
 Install (under *nix) 安裝（於 *nix）
 --------------------------------------
 **If you use Debian(-based) Linux Distro (eg. Ubuntu, Linux Mint),
-you can see Section "Deb package Deb 套件" 若您使用 Debian 系 Linux
-發行版（例如 Ubuntu, Linux Mint），可見段落「Deb package Deb 套件」**
+you can see Section "Deb package Deb 套件"**
+
+**若您使用 Debian 系 Linux 發行版（例如 Ubuntu, Linux
+Mint），可見段落「Deb package Deb 套件」**
 
  1. Install the dependencies above. 安裝相依套件。
  2. Download the zip file of all the source code, and extract it. 下載源碼壓縮檔，解壓縮
